@@ -13,6 +13,7 @@
 		60FD21422B4DB6EA008CFF8E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60FD21412B4DB6EA008CFF8E /* Preview Assets.xcassets */; };
 		60FD21492B4DC091008CFF8E /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FD21482B4DC091008CFF8E /* NewsListViewController.swift */; };
 		60FD214B2B4DC0B7008CFF8E /* NewsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FD214A2B4DC0B7008CFF8E /* NewsListView.swift */; };
+		60FD214D2B4DC100008CFF8E /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60FD214C2B4DC100008CFF8E /* News.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		60FD21412B4DB6EA008CFF8E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60FD21482B4DC091008CFF8E /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		60FD214A2B4DC0B7008CFF8E /* NewsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListView.swift; sourceTree = "<group>"; };
+		60FD214C2B4DC100008CFF8E /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				60FD213C2B4DB6E9008CFF8E /* ContentView.swift */,
 				60FD214A2B4DC0B7008CFF8E /* NewsListView.swift */,
 				60FD21482B4DC091008CFF8E /* NewsListViewController.swift */,
+				60FD214C2B4DC100008CFF8E /* News.storyboard */,
 				60FD213E2B4DB6EA008CFF8E /* Assets.xcassets */,
 				60FD21402B4DB6EA008CFF8E /* Preview Content */,
 			);
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60FD21422B4DB6EA008CFF8E /* Preview Assets.xcassets in Resources */,
+				60FD214D2B4DC100008CFF8E /* News.storyboard in Resources */,
 				60FD213F2B4DB6EA008CFF8E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

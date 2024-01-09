@@ -3,15 +3,16 @@ import SwiftUI
 
 struct NewsListView: UIViewControllerRepresentable {
     
-    func makeUIViewController(context: Context) -> NewsListViewController {
-        NewsListViewController()
+    func makeUIViewController(context: Context) -> UINavigationController {
+        let storyboard = UIStoryboard(name: "News", bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: "navigation") as! UINavigationController
     }
     
-    func updateUIViewController(_ uiViewController: NewsListViewController, context: Context) {
+    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) {
         
     }
     
-    typealias UIViewControllerType = NewsListViewController
+    typealias UIViewControllerType = UINavigationController
     
     
 }
