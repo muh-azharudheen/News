@@ -12,23 +12,29 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="NewsListViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rSx-ep-EyB">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="396" height="851"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="lNr-Qx-ybv"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="F8I-fu-A33"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" id="yU9-37-WWs">
+                                <rect key="frame" x="39" y="404" width="318" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
+                            <constraint firstItem="yU9-37-WWs" firstAttribute="centerY" secondItem="rSx-ep-EyB" secondAttribute="centerY" id="EaR-k8-PHG"/>
                             <constraint firstItem="rSx-ep-EyB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GVF-qa-JRH"/>
+                            <constraint firstItem="yU9-37-WWs" firstAttribute="centerX" secondItem="rSx-ep-EyB" secondAttribute="centerX" id="MQx-0n-XJj"/>
                             <constraint firstAttribute="bottom" secondItem="rSx-ep-EyB" secondAttribute="bottom" id="jS5-KQ-fSN"/>
                             <constraint firstItem="rSx-ep-EyB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oHj-gZ-3dj"/>
                             <constraint firstItem="rSx-ep-EyB" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="w42-tM-qal"/>
@@ -36,6 +42,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="News List" id="rMq-rB-6z8"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="yU9-37-WWs" id="PXq-GS-RuN"/>
                         <outlet property="tableView" destination="rSx-ep-EyB" id="yz4-Gz-Mx6"/>
                     </connections>
                 </viewController>
