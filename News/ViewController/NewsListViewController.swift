@@ -1,24 +1,11 @@
 import UIKit
 
-struct News {
-    let title: String
-    
-    static func getNews() -> [News] {
-        [
-            .init(title: "A Title"),
-            .init(title: "Another Title"),
-            .init(title: "Yet Another Title"),
-        ]
-    }
-}
-
 class NewsListViewController: UIViewController {
     
-    private let cellIdentifier = "cell"
-    
-    private var newsList = News.getNews()
-    
     @IBOutlet private weak var tableView: UITableView?
+    
+    private let cellIdentifier = "cell"
+    private var newsList = News.getNews()
     
     override func viewDidLoad() {
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
