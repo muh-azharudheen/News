@@ -15,10 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rSx-ep-EyB">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="lNr-Qx-ybv"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="F8I-fu-A33"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
+                        <constraints>
+                            <constraint firstItem="rSx-ep-EyB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GVF-qa-JRH"/>
+                            <constraint firstAttribute="bottom" secondItem="rSx-ep-EyB" secondAttribute="bottom" id="jS5-KQ-fSN"/>
+                            <constraint firstItem="rSx-ep-EyB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oHj-gZ-3dj"/>
+                            <constraint firstItem="rSx-ep-EyB" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="w42-tM-qal"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News List" id="rMq-rB-6z8"/>
+                    <connections>
+                        <outlet property="tableView" destination="rSx-ep-EyB" id="yz4-Gz-Mx6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,6 +63,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
