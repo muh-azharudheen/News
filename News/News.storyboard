@@ -12,19 +12,19 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="NewsListViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="5EZ-qb-Rvc">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rSx-ep-EyB">
-                                <rect key="frame" x="0.0" y="0.0" width="396" height="851"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PNl-rG-JuO" detailTextLabel="89Q-rM-5JC" style="IBUITableViewCellStyleSubtitle" id="j0W-qv-BVL">
-                                        <rect key="frame" x="0.0" y="50" width="396" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j0W-qv-BVL" id="noA-2V-D0F">
-                                            <rect key="frame" x="0.0" y="0.0" width="396" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PNl-rG-JuO">
@@ -58,12 +58,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstItem="yU9-37-WWs" firstAttribute="centerY" secondItem="rSx-ep-EyB" secondAttribute="centerY" id="EaR-k8-PHG"/>
-                            <constraint firstItem="rSx-ep-EyB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="GVF-qa-JRH"/>
-                            <constraint firstItem="yU9-37-WWs" firstAttribute="centerX" secondItem="rSx-ep-EyB" secondAttribute="centerX" id="MQx-0n-XJj"/>
-                            <constraint firstAttribute="bottom" secondItem="rSx-ep-EyB" secondAttribute="bottom" id="jS5-KQ-fSN"/>
-                            <constraint firstItem="rSx-ep-EyB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="oHj-gZ-3dj"/>
-                            <constraint firstItem="rSx-ep-EyB" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="w42-tM-qal"/>
+                            <constraint firstItem="rSx-ep-EyB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Yxf-2K-nKu"/>
+                            <constraint firstAttribute="bottom" secondItem="rSx-ep-EyB" secondAttribute="bottom" id="c4T-LG-ION"/>
+                            <constraint firstItem="rSx-ep-EyB" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="hhl-K8-s1c"/>
+                            <constraint firstItem="rSx-ep-EyB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kEG-6V-khK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="News List" id="rMq-rB-6z8"/>
@@ -100,7 +98,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -7,7 +7,7 @@ class NewsListViewController: UIViewController {
     
     private let cellIdentifier = "cell"
     
-     var newsList = [Source]()
+     var newsList = [Article]()
     
     
    private var newsLoader = NewsLoader()
@@ -28,34 +28,13 @@ class NewsListViewController: UIViewController {
     private func loadNewsWithLoadingIndicator() {
         showLoadingIndicator()
         Task {
-            _ = await newsLoader.loadNews()
-            await MainActor.run {
-               // newsList = news
-                hideLoadingIndicator()
+            newsList = await newsLoader.loadNews()
+             DispatchQueue.main.async {
+                 self.hideLoadingIndicator()
+                 self.tableView?.reloadData()
             }
         }
-        getData()
-    }
-    
-    
-    func getData() {
-        guard  let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=2024-01-08&to=2024-01-08&sortBy=popularity&apiKey=77554f5a7c564959bd5004d5438ce35d")else{
-            return
-        }
-        let req = URLRequest(url: url)
-        URLSession.shared.dataTask(with: req) { data, response, errr in
-            if let data = data{
-                let decoder = JSONDecoder()
-                if let jsonData = try? decoder.decode(Article.self, from: data){
-                    self.newsList = jsonData.source
-                  
-                }
-                DispatchQueue.main.async{
-                    self.tableView?.reloadData()
-                }
-                print(self.newsList)
-            }
-        }.resume()
+       
     }
 
 }
@@ -69,8 +48,8 @@ class NewsListViewController: UIViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             let sourceData = newsList[indexPath.row]
             cell.backgroundColor = .gray
-            cell.textLabel?.text = sourceData.id
-            cell.detailTextLabel?.text = sourceData.name
+            cell.textLabel?.text = sourceData.title
+            cell.detailTextLabel?.text = sourceData.publishedAt
             return cell
         }
         
