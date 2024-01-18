@@ -7,19 +7,16 @@ class NewsListViewController: UIViewController {
     
     private let cellIdentifier = "cell"
     
-    private var newsList = [News]() {
-        didSet {
-            tableView?.reloadData()
-        }
-    }
+     var newsList = [Article]()
     
-    private var newsLoader = NewsLoader()
+    
+   private var newsLoader = NewsLoader()
     
     override func viewDidLoad() {
-        tableView?.register(UINib(nibName: "NewsCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        tableView?.register(UINib(nibName: "Cell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         loadNewsWithLoadingIndicator()
     }
-
+    
     private func showLoadingIndicator() {
         activityIndicator?.startAnimating()
     }
@@ -31,24 +28,30 @@ class NewsListViewController: UIViewController {
     private func loadNewsWithLoadingIndicator() {
         showLoadingIndicator()
         Task {
-            let news = await newsLoader.loadNews()
-            await MainActor.run {
-                newsList = news
-                hideLoadingIndicator()
+            newsList = await newsLoader.loadNews()
+             DispatchQueue.main.async {
+                 self.hideLoadingIndicator()
+                 self.tableView?.reloadData()
             }
         }
+       
     }
-}
 
-extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        newsList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: NewsCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NewsCell
-        cell.configure(with: newsList[indexPath.row])
-        return cell
-    }
 }
+    extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            newsList.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            let sourceData = newsList[indexPath.row]
+            cell.backgroundColor = .gray
+            cell.textLabel?.text = sourceData.title
+            cell.detailTextLabel?.text = sourceData.publishedAt
+            return cell
+        }
+        
+    }
+
